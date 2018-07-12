@@ -16,7 +16,6 @@
 		5C6F440920F7611000DFDACA /* JsonToModelFileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F440820F7611000DFDACA /* JsonToModelFileTests.m */; };
 		5C6F441420F7611000DFDACA /* JsonToModelFileUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F441320F7611000DFDACA /* JsonToModelFileUITests.m */; };
 		5C6F442320F761AB00DFDACA /* YYOCLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F442120F761AA00DFDACA /* YYOCLanguage.m */; };
-		5C6F442520F7624000DFDACA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F442420F7624000DFDACA /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,7 +54,6 @@
 		5C6F441520F7611000DFDACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C6F442120F761AA00DFDACA /* YYOCLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYOCLanguage.m; sourceTree = "<group>"; };
 		5C6F442220F761AA00DFDACA /* YYOCLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYOCLanguage.h; sourceTree = "<group>"; };
-		5C6F442420F7624000DFDACA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +84,6 @@
 		5C6F43E320F7610D00DFDACA = {
 			isa = PBXGroup;
 			children = (
-				5C6F442420F7624000DFDACA /* README.md */,
 				5C6F43EE20F7610D00DFDACA /* JsonToModelFile */,
 				5C6F440720F7611000DFDACA /* JsonToModelFileTests */,
 				5C6F441220F7611000DFDACA /* JsonToModelFileUITests */,
@@ -245,7 +242,6 @@
 			files = (
 				5C6F43FC20F7611000DFDACA /* LaunchScreen.storyboard in Resources */,
 				5C6F43F920F7611000DFDACA /* Assets.xcassets in Resources */,
-				5C6F442520F7624000DFDACA /* README.md in Resources */,
 				5C6F43F720F7610D00DFDACA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
