@@ -37,7 +37,7 @@
                     @"NSObject",//父类名称
                     @"<Foundation/Foundation.h>",//默认导入的框架
                     @"/Users/POSUN/Documents/JsonToModelFile/JsonToModelFile/Model",//生成的类文件保存路径（填写正确的文件路径）
-                    dic//出入一个NSDictionary
+                    dic//一个NSDictionary
                     );
     
     
