@@ -8,7 +8,6 @@
 
 #import "ViewController.h"
 #import "YYOCLanguage.h"
-
 @interface ViewController ()
 
 @end
@@ -27,13 +26,22 @@
                                                         options:NSJSONReadingMutableContainers
                                                           error:&error];
     
-    YYOCLanguage *ocll =[YYOCLanguage share];
-    ocll.className=@"TEST";
-    ocll.importClassName=@"<UIKit/UIKit.h>";
-    ocll.superClassName=@"NSObject";
-    ocll.dataSource=dic;
-    ocll.path=@"/Users/POSUN/Desktop/Test/Test/Model";
-    [ocll outputFile];
+    
+    
+    
+
+
+    
+    YYOCLOutputFile(
+                    @"TEST",//dataSource生成类的类名
+                    @"NSObject",//父类名称
+                    @"<Foundation/Foundation.h>",//默认导入的框架
+                    @"/Users/POSUN/Desktop/Test/Test/Model",//生成的类文件保存路径
+                    dic//出入一个NSDictionary
+                    );
+    
+    
+
     
 }
 - (void)didReceiveMemoryWarning {

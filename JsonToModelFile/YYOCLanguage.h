@@ -8,45 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+/**可以通过宏的方式生成**/
+#define YYOCLOutputFile(className,superClassName,defaultImport,path,dataSource) [[YYOCLanguage share] outputClass:className andSuperClass:superClassName andDefaultImport:defaultImport andSavePath:path fromDataSource:dataSource]
 @interface YYOCLanguage : NSObject
-@property(nonatomic,copy)NSString *importClassName;//引入的框架
-@property(nonatomic,copy)NSString *superClassName;//父类名称
-@property(nonatomic,copy)NSString *className;//类名称
-@property(nonatomic,copy)NSString *path;
-
-@property(nonatomic,retain)id dataSource;//数据源
-
-
-
-@property(nonatomic,copy,readonly)NSString *KVCmethod;
-
-
-@property(nonatomic,retain,readonly)NSMutableDictionary *classInforDic;
-@property(nonatomic,retain,readonly)NSMutableString *ocll;
-
 
 +(instancetype)share;
--(void)reset;
--(void)outputFile;
-
--(YYOCLanguage *)classHStr:(NSDictionary *)dic andClassName:(NSString *)className;
--(YYOCLanguage *)classMStr:(NSDictionary *)dic andClassName:(NSString *)className;
-
-
--(YYOCLanguage*(^)(NSString *className))import;
--(YYOCLanguage*)semicolon;
--(YYOCLanguage*(^)(NSString *className,NSString *superClassName))interface;
--(YYOCLanguage*(^)(NSString *className))implementation;
-- (YYOCLanguage * (^)(NSString *keyName,...))property;
--(YYOCLanguage*(^)(NSString *typeName))Type;
--(YYOCLanguage*(^)(NSString *propertyName))propertyName;
--(YYOCLanguage*(^)(NSString *methodName))methodName;
--(YYOCLanguage*(^)(YYOCLanguage *imp))imp;
--(YYOCLanguage*(^)(NSString *condition))FOR;
--(YYOCLanguage*(^)(NSString *condition))IF;
--(YYOCLanguage*(^)(NSString *code))code;
--(YYOCLanguage *)star;
--(YYOCLanguage*)ELSE;
--(YYOCLanguage*(^)(NSString *condition))ELSE_IF;
--(YYOCLanguage*)end;
+/**用于输出通过dataSource生成的类文件**/
+-(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path fromDataSource:(NSDictionary *)dataSource;
 @end

@@ -7,7 +7,6 @@
 //
 
 #import "YYOCLanguage.h"
-
 static NSString *const OCL_import=@"#import";
 static NSString *const OCL_interface=@"@interface";
 static NSString *const OCL_end=@"@end";
@@ -38,7 +37,31 @@ static NSString *const OCL_Star=@"*";
     NSMutableDictionary *_classInforDic;
 }
 @property(nonatomic,retain)NSMutableString *OCLL;
+@property(nonatomic,copy)NSString *defaultImport;//引入的框架
+@property(nonatomic,copy)NSString *superClassName;//父类名称
+@property(nonatomic,copy)NSString *className;//类名称
+@property(nonatomic,copy)NSString *savePath;//生成的文件的保存路径
+@property(nonatomic,retain)id dataSource;//数据源
+
+-(YYOCLanguage*(^)(NSString *className))import;
+-(YYOCLanguage*)semicolon;
+-(YYOCLanguage*(^)(NSString *className,NSString *superClassName))interface;
+-(YYOCLanguage*(^)(NSString *className))implementation;
+- (YYOCLanguage * (^)(NSString *keyName,...))property;
+-(YYOCLanguage*(^)(NSString *typeName))Type;
+-(YYOCLanguage*(^)(NSString *propertyName))propertyName;
+-(YYOCLanguage*(^)(NSString *methodName))methodName;
+-(YYOCLanguage*(^)(YYOCLanguage *imp))imp;
+-(YYOCLanguage*(^)(NSString *condition))FOR;
+-(YYOCLanguage*(^)(NSString *condition))IF;
+-(YYOCLanguage*(^)(NSString *code))code;
+-(YYOCLanguage *)star;
+-(YYOCLanguage*)ELSE;
+-(YYOCLanguage*(^)(NSString *condition))ELSE_IF;
+-(YYOCLanguage*)end;
 @end
+
+
 @implementation YYOCLanguage
 -(instancetype)init{
     if (self=[super init]) {
@@ -199,9 +222,13 @@ static NSString *const OCL_Star=@"*";
         return NO;
     }
 }
+
+/**
+ 构建类的头文件（.h）的代码
+ **/
 -(YYOCLanguage *)classHStr:(NSDictionary *)dic andClassName:(NSString *)className{
     [self reset];
-    self.import(_importClassName);
+    self.import(_defaultImport);
     [dic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         if ([self isNeedImportClass:obj[OCL_Class]]) {
             self.import([NSString stringWithFormat:@"\"%@.h\"",obj[OCL_Class]]);
@@ -227,16 +254,26 @@ static NSString *const OCL_Star=@"*";
     self.end;
     return self;
 }
+
+/**
+ 构建类的实现文件（.m）的代码
+ **/
 -(YYOCLanguage *)classMStr:(NSDictionary *)dic andClassName:(NSString *)className{
     [self reset];
     
     self.import([NSString stringWithFormat:@"\"%@.h\"",className]);
     
     self.implementation(className);
-    self.code([self KVCmethodsStr:dic].ocll);
+    self.code([self KVCmethodsStr:dic].OCLL);
     self.end;
     return self;
 }
+
+/**
+ 生成类的KVC方法目的是方便使用
+ setValuesForKeysWithDictionary
+ 对类创建的对象赋值
+ **/
 -(YYOCLanguage *)KVCmethodsStr:(NSDictionary*)dic{
     YYOCLanguage *OCLanguage=[[YYOCLanguage alloc] init];
     [OCLanguage.methodName(@"-(void)setValue:(id)value forUndefinedKey:(NSString *)key").imp
@@ -262,7 +299,6 @@ static NSString *const OCL_Star=@"*";
                                                                                      oclanguage.code(@"[super setValue:value forKey:Id];\n")
                                                                                      );
         }
-        
         if ([type isEqualToString:OCL_NSDictionary]) {
             
             NSMutableArray *subArr=[[NSMutableArray alloc] init];
@@ -317,7 +353,7 @@ static NSString *const OCL_Star=@"*";
      );
     return OCLanguage;
 }
-/*通过object构建出一个
+/**通过object构建出一个
  
          @{
            @"className":@{
@@ -345,7 +381,7 @@ static NSString *const OCL_Star=@"*";
            ......
            }
  的类信息字典
- */
+ **/
 -(void )bulidClassInfor:(id)object andClassName:(NSString *)className{
     className=[self firstCharUppercaseString:className];
     
@@ -417,20 +453,19 @@ static NSString *const OCL_Star=@"*";
     _dataSource=dataSource;
     _classInforDic=[[NSMutableDictionary alloc] init];
     [self bulidClassInfor:_dataSource andClassName:_className];
-    NSLog(@"%@",_classInforDic);
 }
-
--(NSMutableDictionary *)classInforDic{
-    return _classInforDic;
+-(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path fromDataSource:(NSDictionary *)dataSource{
+    self.dataSource=dataSource;
+    self.className=className;
+    self.superClassName=superClassName;
+    self.savePath=path;
+    
+    [self outputFile];
 }
--(NSMutableString *)ocll{
-    return _OCLL;
-}
-
 -(void)outputFile{
-    [self.classInforDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        [self bulidFile:[self classHStr:obj andClassName:key].ocll andFileName:[NSString stringWithFormat:@"%@/%@.h",self.path,key]];
-        [self bulidFile:[self classMStr:obj andClassName:key].ocll andFileName:[NSString stringWithFormat:@"%@/%@.m",self.path,key]];
+    [_classInforDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [self bulidFile:[self classHStr:obj andClassName:key].OCLL andFileName:[NSString stringWithFormat:@"%@/%@.h",self.savePath,key]];
+        [self bulidFile:[self classMStr:obj andClassName:key].OCLL andFileName:[NSString stringWithFormat:@"%@/%@.m",self.savePath,key]];
     }];
 }
 
