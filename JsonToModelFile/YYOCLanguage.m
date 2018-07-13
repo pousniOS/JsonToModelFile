@@ -242,16 +242,16 @@ static NSString *const OCL_Star=@"*";
         }
         
         if ([obj[OCL_Type] isEqualToString:OCL_NSMutableArray]||[obj[OCL_Type] isEqualToString:OCL_NSArray]) {
-            self.property(OCL_nonatomic,OCL_retain,nil).Type(obj[OCL_Type]).star.propertyName(key).semicolon;
+            [self.property(OCL_nonatomic,OCL_retain,nil).Type(obj[OCL_Type]).star.propertyName(key) semicolon];
         }
         else if ([obj[OCL_Type] isEqualToString:OCL_NSString]){
-            self.property(OCL_nonatomic,OCL_copy,nil).Type(obj[OCL_Type]).star.propertyName(key).semicolon;
+            [self.property(OCL_nonatomic,OCL_copy,nil).Type(obj[OCL_Type]).star.propertyName(key) semicolon];
         }
         else{
-            self.property(OCL_nonatomic,OCL_retain,nil).Type(obj[OCL_Class]).star.propertyName(key).semicolon;
+            [self.property(OCL_nonatomic,OCL_retain,nil).Type(obj[OCL_Class]).star.propertyName(key) semicolon];
         }
     }];
-    self.end;
+    [self end];
     return self;
 }
 
@@ -265,7 +265,7 @@ static NSString *const OCL_Star=@"*";
     
     self.implementation(className);
     self.code([self KVCmethodsStr:dic].OCLL);
-    self.end;
+    [self end];
     return self;
 }
 
@@ -455,11 +455,22 @@ static NSString *const OCL_Star=@"*";
     [self bulidClassInfor:_dataSource andClassName:_className];
 }
 -(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path fromDataSource:(NSDictionary *)dataSource{
-    self.dataSource=dataSource;
+    
+    if (name.length==0||
+        className.length==0||
+        superClassName.length==0||
+        path.length==0||
+        dataSource==nil) {
+        NSLog(@"defaultImport、className、superClassName、dataSource、savePath都不能为空");
+        return;
+    }
+   
+    
+    self.defaultImport=name;
     self.className=className;
     self.superClassName=superClassName;
     self.savePath=path;
-    
+    self.dataSource=dataSource;
     [self outputFile];
 }
 -(void)outputFile{
