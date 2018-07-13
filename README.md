@@ -1,4 +1,4 @@
-# JsonToModelFile
+# josn数据生成model类文件
 ---
 我们在做项目的时候经常会遇到要通过网络请求得到的json数据来创建Model类文件，有时得到的json文件可能会比较复杂手动的创建Model总感觉费时又费力，例如下面的json数据:
 ```

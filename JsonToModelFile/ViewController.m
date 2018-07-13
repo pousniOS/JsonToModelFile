@@ -14,10 +14,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-
-    
-    
     /**填写正确的文件路径**/
     NSString *str=[NSString stringWithContentsOfFile:@"/Users/POSUN/Desktop/TestJson.json" encoding:NSUTF8StringEncoding error:nil];
     
@@ -39,11 +35,6 @@
                     @"/Users/POSUN/Documents/JsonToModelFile/JsonToModelFile/Model",//生成的类文件保存路径（填写正确的文件路径）
                     dic//一个NSDictionary
                     );
-    
-    
-    
-    
-    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
