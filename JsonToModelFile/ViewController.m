@@ -15,6 +15,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+
+    
+    
     /**填写正确的文件路径**/
     NSString *str=[NSString stringWithContentsOfFile:@"/Users/POSUN/Desktop/TestJson.json" encoding:NSUTF8StringEncoding error:nil];
     
@@ -26,6 +29,8 @@
                                                           error:&error];
     /**
      YYOCLOutputFile(className,superClassName,defaultImport,path,dataSource)生成文件，然后到@"/Users/POSUN/Documents/JsonToModelFile/JsonToModelFile/Model"将文件引入项目
+     
+     注意：请删除Model文件夹下的类在运行代码
      **/
     YYOCLOutputFile(
                     @"TEST",//dataSource生成类的类名
@@ -34,6 +39,11 @@
                     @"/Users/POSUN/Documents/JsonToModelFile/JsonToModelFile/Model",//生成的类文件保存路径（填写正确的文件路径）
                     dic//出入一个NSDictionary
                     );
+    
+    
+    
+    
+    
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

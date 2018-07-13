@@ -82,6 +82,84 @@
        
           JsonToModelFile它需要你给这个josn命名一个“根类”，例如上面的例子我可以命名为“Test”。josn里面会有嵌套的字典和数组他们生成的类的名称
        就是它门key的名称，例如：
+       
+       {
+       "salesOrder" : {
+       "assistant1" : "xxx",
+       "assistantId" : "000001",
+       "deliveryType" : "Y",
+       "deliveryTypeName" : "送货上门",
+       "needInstall" : "Y",
+       "orderDate" : "1525507017000",
+       "orgId" : "A",
+       "orgName" : "xxx有限公司",
+       "priceSum" : "3.000000",
+       "refundType" : "1",
+       "requireArriveDate" : "152559xxx",
+       "salesOrderParts" : [
+       {
+       "billPrice" : "3.00",
+       "goods" : {
+       "enableSn" : "",
+       "giftFlag" : "",
+       "goodsTypeName" : "",
+       "id" : "",
+       "partName" : "豪华电饭煲CFXB50YB8-70//4",
+       "pnModel" : "5L",
+       "serialRuleId" : ""
+       },
+       "partRecId" : "01.01.01.400050",
+       "priceRate" : "0.000000",
+       "qtyPlan" : "1",
+       "unitId" : "tai",
+       "unitName" : "台",
+       "unitPrice" : "3"
+       }
+       ],
+       "subscribeDispatch" : "N",
+       "warehouseId" : "1013",
+       "warehouseName" : "xxx库"
+       },
+       "salesRefund" : {
+       "assistant1" : "sss",
+       "assistantId" : "000001",
+       "buyerId" : "QB027",
+       "buyerName" : "北xxxx）",
+       "orderDate" : "1525507017000",
+       "orgId" : "A",
+       "orgName" : "xxx有限公司",
+       "priceSum" : "3.000000",
+       "refundType" : "1",
+       "requireArriveDate" : "152559xxxx",
+       "salesOrderParts" : [
+       {
+       "billPrice" : "3.00",
+       "goods" : {
+       "enableSn" : "",
+       "goodsTypeId" : "",
+       "goodsTypeName" : "",
+       "id" : "",
+       "partName" : "xxxCFXB40YB8-70//4",
+       "pnModel" : "4L",
+       "serialRuleId" : "",
+       "unitId" : "",
+       "unitName" : ""
+       },
+       "partRecId" : "01.01.01.400043",
+       "priceRate" : "0.000000",
+       "qtyPlan" : "1",
+       "unitId" : "tai",
+       "unitName" : "台",
+       "unitPrice" : "3"
+       }
+       ],
+       "warehouseId" : "1011",
+       "warehouseName" : "xxx"
+       }
+       }
+       
+       
+       
        "salesOrderParts" : [
        {
        "billPrice" : "3.00",
