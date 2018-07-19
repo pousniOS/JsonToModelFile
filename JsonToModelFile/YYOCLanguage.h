@@ -18,5 +18,5 @@
  该方法会判断文件是否存在如果存在将不生
  成改文件
  **/
--(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path fromDataSource:(NSDictionary *)dataSource;
+-(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path fromDataSource:(id)dataSource;
 @end

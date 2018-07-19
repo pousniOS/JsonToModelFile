@@ -318,7 +318,7 @@ static NSString *const OCL_Star=@"*";
         else if ([type isEqualToString:OCL_NSArray]||[type isEqualToString:OCL_NSMutableArray]){
             NSMutableArray *subArr=[[NSMutableArray alloc] init];
             NSString *objectName=@"obj";
-            [subArr addObject:[NSString stringWithFormat:@"self.%@=[[%@ alloc] init];",key,OCL_NSMutableArray]];
+//            [subArr addObject:[NSString stringWithFormat:@"self.%@=[[%@ alloc] init];",key,OCL_NSMutableArray]];
             [subArr addObject:[NSString stringWithFormat:@"%@ *%@=[[%@ alloc] init];",class,objectName,class]];
             [subArr addObject:[NSString stringWithFormat:@"[%@ setValuesForKeysWithDictionary:object];",objectName]];
             [subArr addObject:[NSString stringWithFormat:@"[self.%@ addObject:%@];",key,objectName]];
@@ -329,7 +329,7 @@ static NSString *const OCL_Star=@"*";
                 ocl.IF([NSString stringWithFormat:@"[key isEqualToString:@\"%@\"]",key]);
             }
             ocl.imp(
-                    oclanguage.FOR(@"id object in value")
+                    oclanguage.code([NSString stringWithFormat:@"self.%@=[[%@ alloc] init];",key,OCL_NSMutableArray]).FOR(@"id object in value")
                     .imp(
                          oclanguage.code([subArr componentsJoinedByString:@"\n"])
                          )
@@ -454,7 +454,7 @@ static NSString *const OCL_Star=@"*";
     _classInforDic=[[NSMutableDictionary alloc] init];
     [self bulidClassInfor:_dataSource andClassName:_className];
 }
--(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path fromDataSource:(NSDictionary *)dataSource{
+-(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path fromDataSource:(id)dataSource{
     
     if (name.length==0||
         className.length==0||
