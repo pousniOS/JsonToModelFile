@@ -329,7 +329,7 @@ static NSString *const OCL_Star=@"*";
                 ocl.IF([NSString stringWithFormat:@"[key isEqualToString:@\"%@\"]",key]);
             }
             ocl.imp(
-                    oclanguage.code([NSString stringWithFormat:@"self.%@=[[%@ alloc] init];",key,OCL_NSMutableArray]).FOR(@"id object in value")
+                    oclanguage.code([NSString stringWithFormat:@"self.%@=[[%@ alloc] init];\n",key,OCL_NSMutableArray]).FOR(@"id object in value")
                     .imp(
                          oclanguage.code([subArr componentsJoinedByString:@"\n"])
                          )

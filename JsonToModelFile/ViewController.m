@@ -15,7 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     /**填写正确的文件路径**/
-    NSString *str=[NSString stringWithContentsOfFile:@"/Users/POSUN/Desktop/TestJson.json" encoding:NSUTF8StringEncoding error:nil];
+    NSString *str=[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"TestJson.json" ofType:nil] encoding:NSUTF8StringEncoding error:nil];
     
     if (str == nil){return;}
     NSData *jsonData = [str dataUsingEncoding:NSUTF8StringEncoding];
@@ -28,6 +28,8 @@
      
      注意：请删除Model文件夹下的类在运行代码
      **/
+    
+    
     YYOCLOutputFile(
                     @"TEST",//dataSource生成类的类名
                     @"NSObject",//父类名称

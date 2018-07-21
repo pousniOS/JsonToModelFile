@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5C65321620F8445200389100 /* TestJson.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C65321520F8445100389100 /* TestJson.json */; };
-		5C65322220F847AC00389100 /* SalesOrderParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C65321820F847AC00389100 /* SalesOrderParts.m */; };
-		5C65322320F847AC00389100 /* SalesOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C65321D20F847AC00389100 /* SalesOrder.m */; };
-		5C65322420F847AC00389100 /* TEST.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C65321E20F847AC00389100 /* TEST.m */; };
-		5C65322520F847AC00389100 /* SalesRefund.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C65321F20F847AC00389100 /* SalesRefund.m */; };
-		5C65322620F847AC00389100 /* Goods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C65322120F847AC00389100 /* Goods.m */; };
 		5C6F43F120F7610D00DFDACA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F43F020F7610D00DFDACA /* AppDelegate.m */; };
 		5C6F43F420F7610D00DFDACA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F43F320F7610D00DFDACA /* ViewController.m */; };
 		5C6F43F720F7610D00DFDACA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F43F520F7610D00DFDACA /* Main.storyboard */; };
@@ -23,6 +18,11 @@
 		5C6F441420F7611000DFDACA /* JsonToModelFileUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F441320F7611000DFDACA /* JsonToModelFileUITests.m */; };
 		5C6F442320F761AB00DFDACA /* YYOCLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F442120F761AA00DFDACA /* YYOCLanguage.m */; };
 		5C6F442720F7632500DFDACA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F442620F7632500DFDACA /* README.md */; };
+		5CA8A0FB2102C098003D49E7 /* SalesOrderParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8A0F12102C097003D49E7 /* SalesOrderParts.m */; };
+		5CA8A0FC2102C098003D49E7 /* SalesOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8A0F62102C097003D49E7 /* SalesOrder.m */; };
+		5CA8A0FD2102C098003D49E7 /* TEST.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8A0F72102C097003D49E7 /* TEST.m */; };
+		5CA8A0FE2102C098003D49E7 /* SalesRefund.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8A0F82102C097003D49E7 /* SalesRefund.m */; };
+		5CA8A0FF2102C098003D49E7 /* Goods.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8A0FA2102C098003D49E7 /* Goods.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,16 +44,6 @@
 
 /* Begin PBXFileReference section */
 		5C65321520F8445100389100 /* TestJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = TestJson.json; path = ../../../Desktop/TestJson.json; sourceTree = "<group>"; };
-		5C65321820F847AC00389100 /* SalesOrderParts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesOrderParts.m; sourceTree = "<group>"; };
-		5C65321920F847AC00389100 /* SalesRefund.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesRefund.h; sourceTree = "<group>"; };
-		5C65321A20F847AC00389100 /* SalesOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesOrder.h; sourceTree = "<group>"; };
-		5C65321B20F847AC00389100 /* Goods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goods.h; sourceTree = "<group>"; };
-		5C65321C20F847AC00389100 /* SalesOrderParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesOrderParts.h; sourceTree = "<group>"; };
-		5C65321D20F847AC00389100 /* SalesOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesOrder.m; sourceTree = "<group>"; };
-		5C65321E20F847AC00389100 /* TEST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEST.m; sourceTree = "<group>"; };
-		5C65321F20F847AC00389100 /* SalesRefund.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesRefund.m; sourceTree = "<group>"; };
-		5C65322020F847AC00389100 /* TEST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEST.h; sourceTree = "<group>"; };
-		5C65322120F847AC00389100 /* Goods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goods.m; sourceTree = "<group>"; };
 		5C6F43EC20F7610D00DFDACA /* JsonToModelFile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JsonToModelFile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6F43EF20F7610D00DFDACA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5C6F43F020F7610D00DFDACA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -73,6 +63,16 @@
 		5C6F442120F761AA00DFDACA /* YYOCLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYOCLanguage.m; sourceTree = "<group>"; };
 		5C6F442220F761AA00DFDACA /* YYOCLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYOCLanguage.h; sourceTree = "<group>"; };
 		5C6F442620F7632500DFDACA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5CA8A0F12102C097003D49E7 /* SalesOrderParts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesOrderParts.m; sourceTree = "<group>"; };
+		5CA8A0F22102C097003D49E7 /* SalesRefund.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesRefund.h; sourceTree = "<group>"; };
+		5CA8A0F32102C097003D49E7 /* SalesOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesOrder.h; sourceTree = "<group>"; };
+		5CA8A0F42102C097003D49E7 /* Goods.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Goods.h; sourceTree = "<group>"; };
+		5CA8A0F52102C097003D49E7 /* SalesOrderParts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesOrderParts.h; sourceTree = "<group>"; };
+		5CA8A0F62102C097003D49E7 /* SalesOrder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesOrder.m; sourceTree = "<group>"; };
+		5CA8A0F72102C097003D49E7 /* TEST.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEST.m; sourceTree = "<group>"; };
+		5CA8A0F82102C097003D49E7 /* SalesRefund.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesRefund.m; sourceTree = "<group>"; };
+		5CA8A0F92102C098003D49E7 /* TEST.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEST.h; sourceTree = "<group>"; };
+		5CA8A0FA2102C098003D49E7 /* Goods.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Goods.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,16 +103,16 @@
 		5C65321720F8453E00389100 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				5C65321B20F847AC00389100 /* Goods.h */,
-				5C65322120F847AC00389100 /* Goods.m */,
-				5C65321A20F847AC00389100 /* SalesOrder.h */,
-				5C65321D20F847AC00389100 /* SalesOrder.m */,
-				5C65321C20F847AC00389100 /* SalesOrderParts.h */,
-				5C65321820F847AC00389100 /* SalesOrderParts.m */,
-				5C65321920F847AC00389100 /* SalesRefund.h */,
-				5C65321F20F847AC00389100 /* SalesRefund.m */,
-				5C65322020F847AC00389100 /* TEST.h */,
-				5C65321E20F847AC00389100 /* TEST.m */,
+				5CA8A0F42102C097003D49E7 /* Goods.h */,
+				5CA8A0FA2102C098003D49E7 /* Goods.m */,
+				5CA8A0F32102C097003D49E7 /* SalesOrder.h */,
+				5CA8A0F62102C097003D49E7 /* SalesOrder.m */,
+				5CA8A0F52102C097003D49E7 /* SalesOrderParts.h */,
+				5CA8A0F12102C097003D49E7 /* SalesOrderParts.m */,
+				5CA8A0F22102C097003D49E7 /* SalesRefund.h */,
+				5CA8A0F82102C097003D49E7 /* SalesRefund.m */,
+				5CA8A0F92102C098003D49E7 /* TEST.h */,
+				5CA8A0F72102C097003D49E7 /* TEST.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -310,13 +310,13 @@
 			files = (
 				5C6F43F420F7610D00DFDACA /* ViewController.m in Sources */,
 				5C6F442320F761AB00DFDACA /* YYOCLanguage.m in Sources */,
-				5C65322220F847AC00389100 /* SalesOrderParts.m in Sources */,
+				5CA8A0FB2102C098003D49E7 /* SalesOrderParts.m in Sources */,
 				5C6F43FF20F7611000DFDACA /* main.m in Sources */,
-				5C65322520F847AC00389100 /* SalesRefund.m in Sources */,
+				5CA8A0FE2102C098003D49E7 /* SalesRefund.m in Sources */,
 				5C6F43F120F7610D00DFDACA /* AppDelegate.m in Sources */,
-				5C65322620F847AC00389100 /* Goods.m in Sources */,
-				5C65322320F847AC00389100 /* SalesOrder.m in Sources */,
-				5C65322420F847AC00389100 /* TEST.m in Sources */,
+				5CA8A0FF2102C098003D49E7 /* Goods.m in Sources */,
+				5CA8A0FC2102C098003D49E7 /* SalesOrder.m in Sources */,
+				5CA8A0FD2102C098003D49E7 /* TEST.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
