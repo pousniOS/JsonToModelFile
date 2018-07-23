@@ -16,8 +16,8 @@
 		5C6F43FF20F7611000DFDACA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F43FE20F7611000DFDACA /* main.m */; };
 		5C6F440920F7611000DFDACA /* JsonToModelFileTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F440820F7611000DFDACA /* JsonToModelFileTests.m */; };
 		5C6F441420F7611000DFDACA /* JsonToModelFileUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F441320F7611000DFDACA /* JsonToModelFileUITests.m */; };
-		5C6F442320F761AB00DFDACA /* YYOCLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F442120F761AA00DFDACA /* YYOCLanguage.m */; };
 		5C6F442720F7632500DFDACA /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 5C6F442620F7632500DFDACA /* README.md */; };
+		5C7AB3272105C9F800035235 /* YYOCLanguage.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C7AB3252105C9F800035235 /* YYOCLanguage.m */; };
 		5CA8A0FB2102C098003D49E7 /* SalesOrderParts.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8A0F12102C097003D49E7 /* SalesOrderParts.m */; };
 		5CA8A0FC2102C098003D49E7 /* SalesOrder.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8A0F62102C097003D49E7 /* SalesOrder.m */; };
 		5CA8A0FD2102C098003D49E7 /* TEST.m in Sources */ = {isa = PBXBuildFile; fileRef = 5CA8A0F72102C097003D49E7 /* TEST.m */; };
@@ -60,9 +60,9 @@
 		5C6F440F20F7611000DFDACA /* JsonToModelFileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JsonToModelFileUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C6F441320F7611000DFDACA /* JsonToModelFileUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JsonToModelFileUITests.m; sourceTree = "<group>"; };
 		5C6F441520F7611000DFDACA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5C6F442120F761AA00DFDACA /* YYOCLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYOCLanguage.m; sourceTree = "<group>"; };
-		5C6F442220F761AA00DFDACA /* YYOCLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYOCLanguage.h; sourceTree = "<group>"; };
 		5C6F442620F7632500DFDACA /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		5C7AB3252105C9F800035235 /* YYOCLanguage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYOCLanguage.m; sourceTree = "<group>"; };
+		5C7AB3262105C9F800035235 /* YYOCLanguage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYOCLanguage.h; sourceTree = "<group>"; };
 		5CA8A0F12102C097003D49E7 /* SalesOrderParts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SalesOrderParts.m; sourceTree = "<group>"; };
 		5CA8A0F22102C097003D49E7 /* SalesRefund.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesRefund.h; sourceTree = "<group>"; };
 		5CA8A0F32102C097003D49E7 /* SalesOrder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SalesOrder.h; sourceTree = "<group>"; };
@@ -120,6 +120,7 @@
 		5C6F43E320F7610D00DFDACA = {
 			isa = PBXGroup;
 			children = (
+				5C7AB3242105C9F800035235 /* JsonToModelFile */,
 				5C6F442620F7632500DFDACA /* README.md */,
 				5C6F43EE20F7610D00DFDACA /* JsonToModelFile */,
 				5C6F440720F7611000DFDACA /* JsonToModelFileTests */,
@@ -143,8 +144,6 @@
 			children = (
 				5C65321720F8453E00389100 /* Model */,
 				5C65321520F8445100389100 /* TestJson.json */,
-				5C6F442220F761AA00DFDACA /* YYOCLanguage.h */,
-				5C6F442120F761AA00DFDACA /* YYOCLanguage.m */,
 				5C6F43EF20F7610D00DFDACA /* AppDelegate.h */,
 				5C6F43F020F7610D00DFDACA /* AppDelegate.m */,
 				5C6F43F220F7610D00DFDACA /* ViewController.h */,
@@ -174,6 +173,16 @@
 				5C6F441520F7611000DFDACA /* Info.plist */,
 			);
 			path = JsonToModelFileUITests;
+			sourceTree = "<group>";
+		};
+		5C7AB3242105C9F800035235 /* JsonToModelFile */ = {
+			isa = PBXGroup;
+			children = (
+				5C7AB3262105C9F800035235 /* YYOCLanguage.h */,
+				5C7AB3252105C9F800035235 /* YYOCLanguage.m */,
+			);
+			name = JsonToModelFile;
+			path = JsonToModelFile/JsonToModelFile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,10 +318,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C6F43F420F7610D00DFDACA /* ViewController.m in Sources */,
-				5C6F442320F761AB00DFDACA /* YYOCLanguage.m in Sources */,
 				5CA8A0FB2102C098003D49E7 /* SalesOrderParts.m in Sources */,
 				5C6F43FF20F7611000DFDACA /* main.m in Sources */,
 				5CA8A0FE2102C098003D49E7 /* SalesRefund.m in Sources */,
+				5C7AB3272105C9F800035235 /* YYOCLanguage.m in Sources */,
 				5C6F43F120F7610D00DFDACA /* AppDelegate.m in Sources */,
 				5CA8A0FF2102C098003D49E7 /* Goods.m in Sources */,
 				5CA8A0FC2102C098003D49E7 /* SalesOrder.m in Sources */,
