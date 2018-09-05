@@ -1,0 +1,26 @@
+{
+  "ID":"1234567890",
+  "salesOrder" : {
+    "assistant1" : "xxx",
+    "salesOrderParts" : [
+      {
+        "goods" : {
+          "partName" : "xxxCFXB50YB8-70//4",
+        },
+        "partRecId" : "01.01.01.400050",
+      }
+    ]
+  },
+  "salesRefund" : {
+    "assistant1" : "xxx",
+      "salesOrderParts" : [
+        {
+        "goods" : {
+        "partName" : "xxxCFXB50YB8-70//4",
+        },
+        "partRecId" : "01.01.01.400050",
+        }
+        ]
+  }
+}
+

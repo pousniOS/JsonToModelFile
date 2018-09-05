@@ -1,0 +1,75 @@
+{
+  "salesOrder" : {
+    "assistant1" : "xxx",
+    "assistantId" : "000001",
+    "deliveryType" : "Y",
+    "deliveryTypeName" : "送货上门",
+    "needInstall" : "Y",
+    "orderDate" : "1525507xxx",
+    "orgId" : "A",
+    "orgName" : "xxx有限公司",
+    "priceSum" : "3.000000",
+    "number" : 4534,
+    "refundType" : "1",
+    "requireArriveDate" : "1525593xxx",
+    "salesOrderParts" : [
+      {
+        "billPrice" : "3.00",
+        "goods" : {
+          "enableSn" : "",
+          "giftFlag" : "",
+          "goodsTypeName" : "",
+          "id" : "",
+          "partName" : "xxxCFXB50YB8-70//4",
+          "pnModel" : "5L",
+          "serialRuleId" : ""
+        },
+        "partRecId" : "01.01.01.400050",
+        "priceRate" : "0.000000",
+        "qtyPlan" : "1",
+        "unitId" : "tai",
+        "unitName" : "台",
+        "unitPrice" : "3"
+      }
+    ],
+    "subscribeDispatch" : "N",
+    "warehouseId" : "1013",
+    "warehouseName" : "xxx库"
+  },
+  "salesRefund" : {
+    "assistant1" : "xxx",
+    "assistantId" : "000001",
+    "buyerId" : "QB027",
+    "buyerName" : "xxx",
+    "orderDate" : "1525507xxx",
+    "orgId" : "A",
+    "orgName" : "xxx有限公司",
+    "priceSum" : "3.000000",
+    "refundType" : "1",
+    "requireArriveDate" : "1525593xxx",
+    "salesOrderParts" : [
+      {
+        "billPrice" : "3.00",
+        "goods" : {
+          "enableSn" : "",
+          "goodsTypeId" : "",
+          "goodsTypeName" : "",
+          "id" : "",
+          "partName" : "xxxCFXB40YB8-70//4",
+          "pnModel" : "4L",
+          "serialRuleId" : "",
+          "unitId" : "",
+          "unitName" : ""
+        },
+        "partRecId" : "01.01.01.400043",
+        "priceRate" : "0.000000",
+        "qtyPlan" : "1",
+        "unitId" : "tai",
+        "unitName" : "台",
+        "unitPrice" : "3"
+      }
+    ],
+    "warehouseId" : "1011",
+    "warehouseName" : "xxx库"
+  }
+}

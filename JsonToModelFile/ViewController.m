@@ -15,8 +15,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     /**填写正确的文件路径**/
-    NSString *str=[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"TestJson.json" ofType:nil] encoding:NSUTF8StringEncoding error:nil];
-    
+    NSString *str=[NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"TestJson 2.json" ofType:nil] encoding:NSUTF8StringEncoding error:nil];
     if (str == nil){return;}
     NSData *jsonData = [str dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error=nil;
