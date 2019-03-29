@@ -23,6 +23,10 @@ static NSString *const OCL_semicolon=@";\n";
 
 static NSString *const OCL_Type=@"Type";
 static NSString *const OCL_Class=@"Class";
+static NSString *const OCL_Unknown_Type=@"OCL_Unknown_Type";
+
+
+
 static NSString *const OCL_NSDictionary=@"NSDictionary";
 static NSString *const OCL_NSNumber=@"NSNumber";
 static NSString *const OCL_NSString=@"NSString";
@@ -221,7 +225,6 @@ static NSString *const OCL_Star=@"*";
         return NO;
     }
 }
-
 /**
  构建类的头文件（.h）的代码
  **/
@@ -314,7 +317,7 @@ static NSString *const OCL_Star=@"*";
                      );
             flag=YES;
         }
-        else if ([type isEqualToString:OCL_NSArray]||[type isEqualToString:OCL_NSMutableArray]){
+        else if (([type isEqualToString:OCL_NSArray]||[type isEqualToString:OCL_NSMutableArray])&&![class isEqualToString:OCL_Unknown_Type]){
             NSMutableArray *subArr=[[NSMutableArray alloc] init];
             NSString *objectName=@"obj";
 //            [subArr addObject:[NSString stringWithFormat:@"self.%@=[[%@ alloc] init];",key,OCL_NSMutableArray]];
@@ -346,10 +349,7 @@ static NSString *const OCL_Star=@"*";
         ocl.code(@"[super setValue:value forKey:key];\n");
     }
     
-    OCLanguage.methodName(@"-(void)setValue:(id)value forKey:(NSString *)key").imp
-    (
-     ocl
-     );
+    OCLanguage.methodName(@"-(void)setValue:(id)value forKey:(NSString *)key").imp(ocl);
     return OCLanguage;
 }
 /**通过object构建出一个
@@ -398,19 +398,22 @@ static NSString *const OCL_Star=@"*";
             NSString *key=keyArray[i];
             id value=dic[key];
             if ([value isKindOfClass:[NSArray class]]){
+                NSString *name=[self firstCharUppercaseString:key];
                 if ([object[key] count]){
-                    
-                    NSString *name=[self firstCharUppercaseString:key];
                     [self bulidClassInfor:object[key][0] andClassName:name];
                     NSDictionary *subDic=@{
                                            OCL_Type:OCL_NSMutableArray,
                                            OCL_Class:name
                                            };
                     [dic setValue:subDic forKey:key];
+                }else{
+                    NSDictionary *subDic=@{
+                                           OCL_Type:OCL_NSMutableArray,
+                                           OCL_Class:OCL_Unknown_Type
+                                           };
+                    [dic setValue:subDic forKey:key];
                 }
-                else{}
-            }
-            else if ([value isKindOfClass:[NSDictionary class]]){
+            }else if ([value isKindOfClass:[NSDictionary class]]){
                 NSString *name=[self firstCharUppercaseString:key];
                 NSDictionary *subDic=@{
                                        OCL_Type:OCL_NSDictionary,

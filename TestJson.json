@@ -1,75 +1,315 @@
 {
-  "salesOrder" : {
-    "assistant1" : "xxx",
-    "assistantId" : "000001",
-    "deliveryType" : "Y",
-    "deliveryTypeName" : "送货上门",
-    "needInstall" : "Y",
-    "orderDate" : "1525507xxx",
-    "orgId" : "A",
-    "orgName" : "xxx有限公司",
-    "priceSum" : "3.000000",
-    "number" : 4534,
-    "refundType" : "1",
-    "requireArriveDate" : "1525593xxx",
-    "salesOrderParts" : [
-      {
-        "billPrice" : "3.00",
-        "goods" : {
-          "enableSn" : "",
-          "giftFlag" : "",
-          "goodsTypeName" : "",
-          "id" : "",
-          "partName" : "xxxCFXB50YB8-70//4",
-          "pnModel" : "5L",
-          "serialRuleId" : ""
+    "todo" : {
+        "todo" : {
+            "todo_type" : true,
+            "ico" : null,
+            "todo_uid" : null,
+            "id" : "5c1253bb39572f55e2a296c0",
+            "approver" : null,
+            "users" : null,
+            "app_name" : null,
+            "readTime" : null,
+            "allTarget" : "学校管理员,张三,李四,王五,阿吖,背包,123456,纯粹,队的,嗯嗯,方法,王老师,阚小二,天天,覆盖面,王炸,分工,@123@",
+            "target" : "8151",
+            "hot" : false,
+            "approveId" : null,
+            "description" : null,
+            "agent_id" : null,
+            "appId" : "APP_NOTICE",
+            "revoke" : false,
+            "reminding" : false,
+            "templateName" : "通知审核提醒",
+            "relationId" : "5c1253bb39572f55e2a29699",
+            "receiver" : null,
+            "sendTime" : "2018-12-13 20:42:35",
+            "myData" : {
+                "title" : {
+                    "title" : null,
+                    "content" : "wefd",
+                    "color" : "#fd992a"
+                },
+                "content" : {
+                    "title" : null,
+                    "content" : "123456",
+                    "color" : "#fd992a"
+                }
+            },
+            "agent_name" : null,
+            "todo_status" : 0,
+            "name" : null,
+            "model" : null,
+            "status" : null,
+            "data" : [
+                {
+                    "title" : "first",
+                    "content" : "您有一个新的通知，请及时查看\n",
+                    "color" : null
+                },
+                {
+                    "title" : "remark",
+                    "content" : "\n欢迎您下次访问，谢谢！",
+                    "color" : "#fd992a"
+                },
+                {
+                    "title" : "first",
+                    "content" : "您有一个新的通知发送申请，请及时处理\n",
+                    "color" : null
+                },
+                {
+                    "title" : "keyword1",
+                    "content" : "学校管理员",
+                    "color" : "#207bee"
+                },
+                {
+                    "title" : "keyword2",
+                    "content" : "审核通知wefd",
+                    "color" : "#207bee"
+                },
+                {
+                    "title" : "keyword3",
+                    "content" : "2018-12-13 20:42",
+                    "color" : "#207bee"
+                },
+                {
+                    "title" : "remark",
+                    "content" : "\n欢迎您下次访问，谢谢！",
+                    "color" : "#fd992a"
+                }
+            ],
+            "sendType" : false,
+            "mobile" : "http:\/\/yun.17ysjy.com\/api\/service\/message\/detail?link=5c1253bb39572f55e2a296c1",
+            "pc" : "http:\/\/yun.17ysjy.com\/api\/service\/message\/detail?link=5c1253bb39572f55e2a296c2",
+            "sign" : null,
+            "privateData" : [
+                
+            ],
+            "appid" : null,
+            "read" : false,
+            "publisher" : "学校管理员",
+            "openid" : null,
+            "schoolId" : 338,
+            "objApp" : null,
+            "title" : "wefd",
+            "app_uid" : null,
+            "startDate" : null
         },
-        "partRecId" : "01.01.01.400050",
-        "priceRate" : "0.000000",
-        "qtyPlan" : "1",
-        "unitId" : "tai",
-        "unitName" : "台",
-        "unitPrice" : "3"
-      }
-    ],
-    "subscribeDispatch" : "N",
-    "warehouseId" : "1013",
-    "warehouseName" : "xxx库"
-  },
-  "salesRefund" : {
-    "assistant1" : "xxx",
-    "assistantId" : "000001",
-    "buyerId" : "QB027",
-    "buyerName" : "xxx",
-    "orderDate" : "1525507xxx",
-    "orgId" : "A",
-    "orgName" : "xxx有限公司",
-    "priceSum" : "3.000000",
-    "refundType" : "1",
-    "requireArriveDate" : "1525593xxx",
-    "salesOrderParts" : [
-      {
-        "billPrice" : "3.00",
-        "goods" : {
-          "enableSn" : "",
-          "goodsTypeId" : "",
-          "goodsTypeName" : "",
-          "id" : "",
-          "partName" : "xxxCFXB40YB8-70//4",
-          "pnModel" : "4L",
-          "serialRuleId" : "",
-          "unitId" : "",
-          "unitName" : ""
-        },
-        "partRecId" : "01.01.01.400043",
-        "priceRate" : "0.000000",
-        "qtyPlan" : "1",
-        "unitId" : "tai",
-        "unitName" : "台",
-        "unitPrice" : "3"
-      }
-    ],
-    "warehouseId" : "1011",
-    "warehouseName" : "xxx库"
-  }
+        "count" : 2
+    },
+    "message" : {
+        "count" : 2,
+        "message" : {
+            "ico" : null,
+            "id" : "5c12475439572f55e2a2927e",
+            "approver" : null,
+            "users" : null,
+            "app_name" : null,
+            "readTime" : null,
+            "hot" : false,
+            "approveId" : null,
+            "description" : null,
+            "appId" : "APP_SURVEY",
+            "revoke" : false,
+            "reminding" : false,
+            "templateName" : "问卷调查通知提醒",
+            "sourceUid" : null,
+            "message_uid" : null,
+            "relationId" : null,
+            "receiver" : null,
+            "sendTime" : "2018-12-13 19:49:40",
+            "myData" : {
+                "title" : {
+                    "title" : null,
+                    "content" : "啊沙发沙发",
+                    "color" : "#fd992a"
+                },
+                "content" : {
+                    "title" : null,
+                    "content" : "<p>妥妥帖帖拖<\/p>",
+                    "color" : "#fd992a"
+                }
+            },
+            "name" : null,
+            "model" : null,
+            "status" : null,
+            "data" : [
+                {
+                    "title" : "first",
+                    "content" : "您有一个新的问卷调查，请及时查看\n",
+                    "color" : null
+                },
+                {
+                    "title" : "keyword1",
+                    "content" : "阿吖发起了问卷调查",
+                    "color" : "#207bee"
+                },
+                {
+                    "title" : "keyword2",
+                    "content" : "2018-12-13 19:49",
+                    "color" : "#207bee"
+                },
+                {
+                    "title" : "keyword3",
+                    "content" : "啊沙发沙发",
+                    "color" : "#207bee"
+                },
+                {
+                    "title" : "remark",
+                    "content" : "\n欢迎您下次访问，谢谢！",
+                    "color" : "#fd992a"
+                },
+                {
+                    "title" : "content",
+                    "content" : "<p>妥妥帖帖拖<\/p>",
+                    "color" : null
+                }
+            ],
+            "sendType" : false,
+            "mobile" : "http:\/\/yun.17ysjy.com\/api\/service\/message\/detail?link=5c12475439572f55e2a2927f",
+            "past" : false,
+            "templateIds" : null,
+            "pc" : "http:\/\/yun.17ysjy.com\/api\/service\/message\/detail?link=5c12475439572f55e2a29280",
+            "sign" : null,
+            "privateData" : null,
+            "appid" : "wxe69b2021a9e1d87e",
+            "read" : false,
+            "publisher" : "阿吖",
+            "openid" : null,
+            "schoolId" : 338,
+            "objApp" : null,
+            "title" : "啊沙发沙发",
+            "app_uid" : null,
+            "startDate" : null
+        }
+    },
+    "notice" : {
+        "count" : 4,
+        "notice" : {
+            "mobile" : null,
+            "content" : "<p>qwegrfhjhg<\/p>",
+            "uid" : null,
+            "id" : 201,
+            "userId" : {
+                "account" : "wq@qq.com",
+                "spellname" : "xuexiaoguanliyuan",
+                "image" : "http:\/\/yun.17ysjy.com\/api\/service\/file\/http:\/\/yun.17ysjy.com\/api\/service\/file\/null",
+                "nickname" : "学校管理员",
+                "qqId" : null,
+                "schoolId" : null,
+                "deleted" : false,
+                "roleList" : null,
+                "certificate" : null,
+                "type" : 1,
+                "id" : 8147,
+                "gender" : {
+                    "id" : "0",
+                    "name" : "未知"
+                },
+                "email" : "wq@qq.com",
+                "uid" : "fc84107c-fdb4-11e8-9f14-00163e059ed6",
+                "phone" : null,
+                "valid" : true,
+                "unAcount" : null,
+                "decryptPassword" : "5EC08C976E18C91AAEB095A2ED2F2FF4",
+                "expassword" : null,
+                "regTime" : "2018-12-12 10:24:00"
+            },
+            "title" : "12345",
+            "schoolId" : 338,
+            "cover" : null,
+            "pc" : null,
+            "createTime" : "2018-12-14 11:25"
+        }
+    },
+    "shcedule" : {
+        "count" : 0,
+        "shcedule" : null
+    },
+    "news" : {
+        "count" : 0,
+        "news" : {
+            "ico" : null,
+            "id" : "5c12424039572f55e2a290b1",
+            "approver" : null,
+            "users" : null,
+            "app_name" : null,
+            "readTime" : "2018-12-13 19:28:11",
+            "hot" : false,
+            "approveId" : null,
+            "description" : null,
+            "appId" : "APP_NOTICE",
+            "revoke" : false,
+            "reminding" : false,
+            "templateName" : "通知消息提醒",
+            "sourceUid" : null,
+            "message_uid" : null,
+            "relationId" : null,
+            "receiver" : null,
+            "sendTime" : "2018-12-13 19:28:00",
+            "myData" : {
+                "title" : {
+                    "title" : null,
+                    "content" : "爱是飞洒发送发",
+                    "color" : "#fd992a"
+                },
+                "content" : {
+                    "title" : null,
+                    "content" : "不不不不不不不不不不不不吧所付所发发付按时发生发生发是发",
+                    "color" : "#fd992a"
+                }
+            },
+            "name" : null,
+            "model" : null,
+            "status" : null,
+            "data" : [
+                {
+                    "title" : "content",
+                    "content" : "<p>不不不不不不不不不不不不吧所付所发发付按时发生发生发是发<\/p>",
+                    "color" : null
+                },
+                {
+                    "title" : "first",
+                    "content" : "您有一个新的通知，请及时查看\n",
+                    "color" : null
+                },
+                {
+                    "title" : "keyword1",
+                    "content" : "爱是飞洒发送发",
+                    "color" : "#207bee"
+                },
+                {
+                    "title" : "keyword2",
+                    "content" : "2018-12-13 19:28",
+                    "color" : "#207bee"
+                },
+                {
+                    "title" : "keyword3",
+                    "content" : "不不不不不不不不不不不不吧所付所发发付按时发生发生发是发",
+                    "color" : "#207bee"
+                },
+                {
+                    "title" : "remark",
+                    "content" : "\n欢迎您下次访问，谢谢！",
+                    "color" : "#fd992a"
+                }
+            ],
+            "sendType" : false,
+            "mobile" : "http:\/\/yun.17ysjy.com\/api\/service\/message\/detail?link=5c12424039572f55e2a290b2",
+            "past" : false,
+            "templateIds" : null,
+            "pc" : "http:\/\/yun.17ysjy.com\/api\/service\/message\/detail?link=5c12424039572f55e2a290b3",
+            "sign" : null,
+            "privateData" : [
+                
+            ],
+            "appid" : "wxe69b2021a9e1d87e",
+            "read" : true,
+            "publisher" : "阿吖",
+            "openid" : null,
+            "schoolId" : 338,
+            "objApp" : null,
+            "title" : "爱是飞洒发送发",
+            "app_uid" : null,
+            "startDate" : null
+        }
+    }
 }
