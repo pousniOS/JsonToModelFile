@@ -24,7 +24,7 @@
                                                           error:&error];
     /**
      YYOCLOutputFile(className,superClassName,defaultImport,path,dataSource)生成文件，然后到@"/Users/POSUN/Documents/JsonToModelFile/JsonToModelFile/Model"将文件引入项目
-     
+
      注意：请删除Model文件夹下的类在运行代码
      **/
    
@@ -33,7 +33,7 @@
                     @"MessagesListModel",//dataSource生成类的类名
                     @"NSObject",//父类名称
                     @"<Foundation/Foundation.h>",//默认导入的框架
-                    @"/Users/POSUN/Desktop/未命名文件夹",//生成的类文件保存路径（填写正确的文件路径）
+                    @"/Users/POSUN/Documents/JsonToModelFile/JsonToModelFile/Model",//生成的类文件保存路径（填写正确的文件路径）
                     dic//一个NSDictionary
                     );
     

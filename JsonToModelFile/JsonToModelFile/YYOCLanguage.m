@@ -166,7 +166,6 @@ static NSString *const OCL_Star=@"*";
 }
 -(YYOCLanguage*(^)(NSString *condition))FOR{
     return ^YYOCLanguage*(NSString *condition){
-        
         [self.OCLL appendString:OCL_for];
         [self.OCLL appendString:@"("];
         [self.OCLL appendString:condition];
@@ -262,9 +261,7 @@ static NSString *const OCL_Star=@"*";
  **/
 -(YYOCLanguage *)classMStr:(NSDictionary *)dic andClassName:(NSString *)className{
     [self reset];
-    
     self.import([NSString stringWithFormat:@"\"%@.h\"",className]);
-    
     self.implementation(className);
     self.code([self KVCmethodsStr:dic].OCLL);
     [self end];
@@ -279,9 +276,7 @@ static NSString *const OCL_Star=@"*";
 -(YYOCLanguage *)KVCmethodsStr:(NSDictionary*)dic{
     YYOCLanguage *OCLanguage=[[YYOCLanguage alloc] init];
     [OCLanguage.methodName(@"-(void)setValue:(id)value forUndefinedKey:(NSString *)key").imp
-     (
-      oclanguage.code(@"NSLog(@\"UndefinedKey:%@\",key);")
-      )
+     (oclanguage.code(@"NSLog(@\"UndefinedKey:%@\",key);"))
      semicolon];
     
     
@@ -295,14 +290,11 @@ static NSString *const OCL_Star=@"*";
         
         NSString *type=obj[OCL_Type];
         NSString *class=obj[OCL_Class];
-        
+
         if ([key isEqualToString:@"id"]) {
-            ocl.IF([NSString stringWithFormat:@"[key isEqualToString:@\"id\"]"]).imp(
-                                                                                     oclanguage.code(@"[super setValue:value forKey:Id];\n")
-                                                                                     );
+            ocl.IF([NSString stringWithFormat:@"[key isEqualToString:@\"id\"]"]).imp(oclanguage.code(@"[super setValue:value forKey:Id];\n"));
         }
         if ([type isEqualToString:OCL_NSDictionary]) {
-            
             NSMutableArray *subArr=[[NSMutableArray alloc] init];
             [subArr addObject:[NSString stringWithFormat:@"self.%@=[[%@ alloc] init];",key,class]];
             [subArr addObject:[NSString stringWithFormat:@"[self.%@ setValuesForKeysWithDictionary:value];",key]];
@@ -312,15 +304,13 @@ static NSString *const OCL_Star=@"*";
             }else{
                 ocl.IF([NSString stringWithFormat:@"[key isEqualToString:@\"%@\"]",key]);
             }
-            ocl.imp(
-                     oclanguage.code([subArr componentsJoinedByString:@"\n"])
-                     );
+            ocl.imp(oclanguage.IF([NSString stringWithFormat:@"[value isKindOfClass:[NSDictionary class]]"]).imp(
+                                                                                                                 oclanguage.code([subArr componentsJoinedByString:@"\n"])).ELSE.imp(oclanguage.code(@"[super setValue:value forKey:key];\n")));
             flag=YES;
         }
         else if (([type isEqualToString:OCL_NSArray]||[type isEqualToString:OCL_NSMutableArray])&&![class isEqualToString:OCL_Unknown_Type]){
             NSMutableArray *subArr=[[NSMutableArray alloc] init];
             NSString *objectName=@"obj";
-//            [subArr addObject:[NSString stringWithFormat:@"self.%@=[[%@ alloc] init];",key,OCL_NSMutableArray]];
             [subArr addObject:[NSString stringWithFormat:@"%@ *%@=[[%@ alloc] init];",class,objectName,class]];
             [subArr addObject:[NSString stringWithFormat:@"[%@ setValuesForKeysWithDictionary:object];",objectName]];
             [subArr addObject:[NSString stringWithFormat:@"[self.%@ addObject:%@];",key,objectName]];
@@ -333,18 +323,15 @@ static NSString *const OCL_Star=@"*";
             ocl.imp(
                     oclanguage.code([NSString stringWithFormat:@"self.%@=[[%@ alloc] init];\n",key,OCL_NSMutableArray]).FOR(@"id object in value")
                     .imp(
-                         oclanguage.code([subArr componentsJoinedByString:@"\n"])
-                         )
-                    );
+                         oclanguage.IF([NSString stringWithFormat:@"[value isKindOfClass:[NSDictionary class]]"]).imp(
+                                                                                                                      oclanguage.code([subArr componentsJoinedByString:@"\n"])).ELSE.imp(
+                                                                                                                                 oclanguage.code([NSString stringWithFormat:@"[self.%@ addObject:value];",key]))));
             flag=YES;
         }
     }];
-
     if (flag) {
         ocl.ELSE.
-        imp(
-            oclanguage.code(@"[super setValue:value forKey:key];\n")
-            );
+        imp(oclanguage.code(@"[super setValue:value forKey:key];\n"));
     }else{
         ocl.code(@"[super setValue:value forKey:key];\n");
     }
@@ -353,7 +340,6 @@ static NSString *const OCL_Star=@"*";
     return OCLanguage;
 }
 /**通过object构建出一个
- 
          @{
            @"className":@{
                    @"propertyName1":@{//属性名
@@ -363,7 +349,6 @@ static NSString *const OCL_Star=@"*";
                    @"propertyName3":@{
                            @"Type":@"type2",
                            @"Class":@"class2"
- 
                            }
                    },
            @"className1":@{
@@ -374,7 +359,6 @@ static NSString *const OCL_Star=@"*";
                    @"propertyName3":@{
                            @"Type":@"type2",
                            @"Class":@"class2"
- 
                            }
                    }
            ......
@@ -457,16 +441,13 @@ static NSString *const OCL_Star=@"*";
     [self bulidClassInfor:_dataSource andClassName:_className];
 }
 -(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path fromDataSource:(id)dataSource{
+
+    NSAssert(name, @"DefaultImport 不能为空");
+    NSAssert(className, @"className 不能为空");
+    NSAssert(superClassName, @"superClassName 不能为空");
+    NSAssert(dataSource, @"dataSource 不能为空");
+    NSAssert(path, @"savePath 不能为空");
     
-    if (name.length==0||
-        className.length==0||
-        superClassName.length==0||
-        path.length==0||
-        dataSource==nil) {
-        NSLog(@"defaultImport、className、superClassName、dataSource、savePath都不能为空");
-        return;
-    }
-   
     
     self.defaultImport=name;
     self.className=className;
