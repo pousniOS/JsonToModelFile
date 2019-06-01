@@ -20,6 +20,7 @@ static NSString *const OCL_if=@"if";
 static NSString *const OCL_else=@"else";
 static NSString *const OCL_else_if=@"else if";
 static NSString *const OCL_semicolon=@";\n";
+static NSString *const OCL_class=@"@class";
 
 static NSString *const OCL_Type=@"Type";
 static NSString *const OCL_Class=@"Class";
@@ -44,10 +45,13 @@ static NSString *const OCL_Star=@"*";
 @property(nonatomic,copy)NSString *superClassName;//父类名称
 @property(nonatomic,copy)NSString *className;//类名称
 @property(nonatomic,copy)NSString *savePath;//生成的文件的保存路径
+@property(nonatomic,assign)BOOL isBuildKVCmethods;//生成的文件的保存路径
+
 @property(nonatomic,retain)id dataSource;//数据源
 
 -(YYOCLanguage*(^)(NSString *className))import;
 -(YYOCLanguage*)semicolon;
+-(YYOCLanguage*(^)(NSString *class))class;
 -(YYOCLanguage*(^)(NSString *className,NSString *superClassName))interface;
 -(YYOCLanguage*(^)(NSString *className))implementation;
 - (YYOCLanguage * (^)(NSString *keyName,...))property;
@@ -96,6 +100,15 @@ static NSString *const OCL_Star=@"*";
 -(YYOCLanguage*)semicolon{
     [self.OCLL appendString:OCL_semicolon];
     return self;
+}
+-(YYOCLanguage*(^)(NSString *class))class{
+    return  ^YYOCLanguage*(NSString *class){
+        [self.OCLL appendString:@"@class "];
+        [self.OCLL appendString:class];
+        [self.OCLL appendString:@";"];
+        [self.OCLL appendString:@"\n"];
+        return self;
+    };
 }
 
 -(YYOCLanguage*(^)(NSString *className,NSString *superClassName))interface{
@@ -232,7 +245,8 @@ static NSString *const OCL_Star=@"*";
     self.import(_defaultImport);
     [dic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
         if ([self isNeedImportClass:obj[OCL_Class]]) {
-            self.import([NSString stringWithFormat:@"\"%@.h\"",obj[OCL_Class]]);
+            self.class(obj[OCL_Class]);
+//            self.import([NSString stringWithFormat:@"\"%@.h\"",obj[OCL_Class]]);
         }
     }];
     self.interface(className,_superClassName);
@@ -243,7 +257,7 @@ static NSString *const OCL_Star=@"*";
         }
         
         if ([obj[OCL_Type] isEqualToString:OCL_NSMutableArray]||[obj[OCL_Type] isEqualToString:OCL_NSArray]) {
-            [self.property(OCL_nonatomic,OCL_retain,nil).Type(obj[OCL_Type]).star.propertyName(key) semicolon];
+            [self.property(OCL_nonatomic,OCL_retain,nil).Type([NSString stringWithFormat:@"%@<%@*>",obj[OCL_Type],obj[OCL_Class]]).star.propertyName(key) semicolon];
         }
         else if ([obj[OCL_Type] isEqualToString:OCL_NSString]){
             [self.property(OCL_nonatomic,OCL_copy,nil).Type(obj[OCL_Type]).star.propertyName(key) semicolon];
@@ -262,8 +276,18 @@ static NSString *const OCL_Star=@"*";
 -(YYOCLanguage *)classMStr:(NSDictionary *)dic andClassName:(NSString *)className{
     [self reset];
     self.import([NSString stringWithFormat:@"\"%@.h\"",className]);
+    
+    
+    [dic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        if ([self isNeedImportClass:obj[OCL_Class]]) {
+            self.import([NSString stringWithFormat:@"\"%@.h\"",obj[OCL_Class]]);
+        }
+    }];
     self.implementation(className);
-    self.code([self KVCmethodsStr:dic].OCLL);
+    if (self.isBuildKVCmethods) {
+        self.code([self KVCmethodsStr:dic].OCLL);
+    }
+    
     [self end];
     return self;
 }
@@ -440,8 +464,8 @@ static NSString *const OCL_Star=@"*";
     _classInforDic=[[NSMutableDictionary alloc] init];
     [self bulidClassInfor:_dataSource andClassName:_className];
 }
--(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path fromDataSource:(id)dataSource{
 
+-(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path IsBuildKVCmethods:(BOOL)flag fromDataSource:(id)dataSource{
     NSAssert(name, @"DefaultImport 不能为空");
     NSAssert(className, @"className 不能为空");
     NSAssert(superClassName, @"superClassName 不能为空");
@@ -454,7 +478,12 @@ static NSString *const OCL_Star=@"*";
     self.superClassName=superClassName;
     self.savePath=path;
     self.dataSource=dataSource;
+    self.isBuildKVCmethods=flag;
     [self outputFile];
+}
+
+-(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path fromDataSource:(id)dataSource{
+    [self outputClass:className andSuperClass:superClassName andDefaultImport:name andSavePath:path IsBuildKVCmethods:YES fromDataSource:dataSource];
 }
 -(void)outputFile{
     [_classInforDic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {

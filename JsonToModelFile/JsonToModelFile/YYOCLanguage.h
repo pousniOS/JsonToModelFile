@@ -7,9 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
 /**可以通过宏的方式生成**/
-#define YYOCLOutputFile(className,superClassName,defaultImport,path,dataSource) [[YYOCLanguage share] outputClass:className andSuperClass:superClassName andDefaultImport:defaultImport andSavePath:path fromDataSource:dataSource]
+#define YYOCLOutputFile(className,superClassName,defaultImport,path,flag,dataSource) [[YYOCLanguage share] outputClass:className andSuperClass:superClassName andDefaultImport:defaultImport andSavePath:path IsBuildKVCmethods:flag fromDataSource:dataSource]
 @interface YYOCLanguage : NSObject
 
 +(instancetype)share;
@@ -18,5 +17,6 @@
  该方法会判断文件是否存在如果存在将不生
  成改文件
  **/
--(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path fromDataSource:(id)dataSource;
+-(void)outputClass:(NSString *)className andSuperClass:(NSString *)superClassName andDefaultImport:(NSString *)name andSavePath:(NSString *)path IsBuildKVCmethods:(BOOL)flag fromDataSource:(id)dataSource;
+
 @end
