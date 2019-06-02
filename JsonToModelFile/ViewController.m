@@ -28,7 +28,7 @@
      注意：请删除Model文件夹下的类在运行代码
      **/
     
-    YYOCLOutputFile(@"MessagesListModel", @"NSObject", @"<Foundation/Foundation.h>", @"/Users/POSUN/Documents/JsonToModelFile/JsonToModelFile/Model", YES, dic);
+    YYOCLOutputFile(@"MessagesListModel", @"NSObject", @"<Foundation/Foundation.h>", @"/Users/apple/Documents/JsonToModelFile/JsonToModelFile/Model", YES, dic);
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

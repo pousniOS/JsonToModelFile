@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1895E5FC22A2AC2D0014ABF2 /* Shcedule.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5E422A2AC2C0014ABF2 /* Shcedule.m */; };
+		1895E5FD22A2AC2D0014ABF2 /* UserId.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5E522A2AC2C0014ABF2 /* UserId.m */; };
+		1895E5FE22A2AC2D0014ABF2 /* Todo.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5EA22A2AC2C0014ABF2 /* Todo.m */; };
+		1895E5FF22A2AC2D0014ABF2 /* MyData.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5EB22A2AC2C0014ABF2 /* MyData.m */; };
+		1895E60022A2AC2D0014ABF2 /* Message.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5ED22A2AC2C0014ABF2 /* Message.m */; };
+		1895E60122A2AC2D0014ABF2 /* Gender.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5EE22A2AC2C0014ABF2 /* Gender.m */; };
+		1895E60222A2AC2D0014ABF2 /* Notice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5EF22A2AC2C0014ABF2 /* Notice.m */; };
+		1895E60322A2AC2D0014ABF2 /* Data.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5F422A2AC2C0014ABF2 /* Data.m */; };
+		1895E60422A2AC2D0014ABF2 /* MessagesListModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5F522A2AC2C0014ABF2 /* MessagesListModel.m */; };
+		1895E60522A2AC2D0014ABF2 /* Content.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5F622A2AC2C0014ABF2 /* Content.m */; };
+		1895E60622A2AC2D0014ABF2 /* News.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5F722A2AC2C0014ABF2 /* News.m */; };
+		1895E60722A2AC2D0014ABF2 /* Title.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E5F822A2AC2C0014ABF2 /* Title.m */; };
 		5C125DA121401DCF00BAA42D /* TestJson 2.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C125DA021401DCF00BAA42D /* TestJson 2.json */; };
 		5C3F790B211A809D00417533 /* JsonToModelFile.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 5C3F790A211A809D00417533 /* JsonToModelFile.podspec */; };
 		5C6F43F120F7610D00DFDACA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C6F43F020F7610D00DFDACA /* AppDelegate.m */; };
@@ -40,6 +52,30 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1895E5E422A2AC2C0014ABF2 /* Shcedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Shcedule.m; sourceTree = "<group>"; };
+		1895E5E522A2AC2C0014ABF2 /* UserId.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserId.m; sourceTree = "<group>"; };
+		1895E5E622A2AC2C0014ABF2 /* News.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = News.h; sourceTree = "<group>"; };
+		1895E5E722A2AC2C0014ABF2 /* Message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Message.h; sourceTree = "<group>"; };
+		1895E5E822A2AC2C0014ABF2 /* Data.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Data.h; sourceTree = "<group>"; };
+		1895E5E922A2AC2C0014ABF2 /* Notice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notice.h; sourceTree = "<group>"; };
+		1895E5EA22A2AC2C0014ABF2 /* Todo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Todo.m; sourceTree = "<group>"; };
+		1895E5EB22A2AC2C0014ABF2 /* MyData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyData.m; sourceTree = "<group>"; };
+		1895E5EC22A2AC2C0014ABF2 /* Gender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gender.h; sourceTree = "<group>"; };
+		1895E5ED22A2AC2C0014ABF2 /* Message.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Message.m; sourceTree = "<group>"; };
+		1895E5EE22A2AC2C0014ABF2 /* Gender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gender.m; sourceTree = "<group>"; };
+		1895E5EF22A2AC2C0014ABF2 /* Notice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notice.m; sourceTree = "<group>"; };
+		1895E5F022A2AC2C0014ABF2 /* Shcedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Shcedule.h; sourceTree = "<group>"; };
+		1895E5F122A2AC2C0014ABF2 /* Title.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Title.h; sourceTree = "<group>"; };
+		1895E5F222A2AC2C0014ABF2 /* MyData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyData.h; sourceTree = "<group>"; };
+		1895E5F322A2AC2C0014ABF2 /* Content.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Content.h; sourceTree = "<group>"; };
+		1895E5F422A2AC2C0014ABF2 /* Data.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Data.m; sourceTree = "<group>"; };
+		1895E5F522A2AC2C0014ABF2 /* MessagesListModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesListModel.m; sourceTree = "<group>"; };
+		1895E5F622A2AC2C0014ABF2 /* Content.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Content.m; sourceTree = "<group>"; };
+		1895E5F722A2AC2C0014ABF2 /* News.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = News.m; sourceTree = "<group>"; };
+		1895E5F822A2AC2C0014ABF2 /* Title.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Title.m; sourceTree = "<group>"; };
+		1895E5F922A2AC2C0014ABF2 /* Todo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Todo.h; sourceTree = "<group>"; };
+		1895E5FA22A2AC2D0014ABF2 /* UserId.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserId.h; sourceTree = "<group>"; };
+		1895E5FB22A2AC2D0014ABF2 /* MessagesListModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesListModel.h; sourceTree = "<group>"; };
 		5C125DA021401DCF00BAA42D /* TestJson 2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "TestJson 2.json"; sourceTree = "<group>"; };
 		5C3F790A211A809D00417533 /* JsonToModelFile.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = JsonToModelFile.podspec; sourceTree = "<group>"; };
 		5C6F43EC20F7610D00DFDACA /* JsonToModelFile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JsonToModelFile.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,9 +125,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5C65321720F8453E00389100 /* Model */ = {
+		1895E5E322A2ABE90014ABF2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1895E5F322A2AC2C0014ABF2 /* Content.h */,
+				1895E5F622A2AC2C0014ABF2 /* Content.m */,
+				1895E5E822A2AC2C0014ABF2 /* Data.h */,
+				1895E5F422A2AC2C0014ABF2 /* Data.m */,
+				1895E5EC22A2AC2C0014ABF2 /* Gender.h */,
+				1895E5EE22A2AC2C0014ABF2 /* Gender.m */,
+				1895E5E722A2AC2C0014ABF2 /* Message.h */,
+				1895E5ED22A2AC2C0014ABF2 /* Message.m */,
+				1895E5FB22A2AC2D0014ABF2 /* MessagesListModel.h */,
+				1895E5F522A2AC2C0014ABF2 /* MessagesListModel.m */,
+				1895E5F222A2AC2C0014ABF2 /* MyData.h */,
+				1895E5EB22A2AC2C0014ABF2 /* MyData.m */,
+				1895E5E622A2AC2C0014ABF2 /* News.h */,
+				1895E5F722A2AC2C0014ABF2 /* News.m */,
+				1895E5E922A2AC2C0014ABF2 /* Notice.h */,
+				1895E5EF22A2AC2C0014ABF2 /* Notice.m */,
+				1895E5F022A2AC2C0014ABF2 /* Shcedule.h */,
+				1895E5E422A2AC2C0014ABF2 /* Shcedule.m */,
+				1895E5F122A2AC2C0014ABF2 /* Title.h */,
+				1895E5F822A2AC2C0014ABF2 /* Title.m */,
+				1895E5F922A2AC2C0014ABF2 /* Todo.h */,
+				1895E5EA22A2AC2C0014ABF2 /* Todo.m */,
+				1895E5FA22A2AC2D0014ABF2 /* UserId.h */,
+				1895E5E522A2AC2C0014ABF2 /* UserId.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -124,7 +184,7 @@
 		5C6F43EE20F7610D00DFDACA /* JsonToModelFile */ = {
 			isa = PBXGroup;
 			children = (
-				5C65321720F8453E00389100 /* Model */,
+				1895E5E322A2ABE90014ABF2 /* Model */,
 				5C6F43EF20F7610D00DFDACA /* AppDelegate.h */,
 				5C6F43F020F7610D00DFDACA /* AppDelegate.m */,
 				5C6F43F220F7610D00DFDACA /* ViewController.h */,
@@ -303,7 +363,19 @@
 				5C6F43F420F7610D00DFDACA /* ViewController.m in Sources */,
 				5C6F43FF20F7611000DFDACA /* main.m in Sources */,
 				5C7AB3272105C9F800035235 /* YYOCLanguage.m in Sources */,
+				1895E60422A2AC2D0014ABF2 /* MessagesListModel.m in Sources */,
+				1895E60722A2AC2D0014ABF2 /* Title.m in Sources */,
+				1895E5FF22A2AC2D0014ABF2 /* MyData.m in Sources */,
+				1895E60622A2AC2D0014ABF2 /* News.m in Sources */,
+				1895E60522A2AC2D0014ABF2 /* Content.m in Sources */,
+				1895E60122A2AC2D0014ABF2 /* Gender.m in Sources */,
 				5C6F43F120F7610D00DFDACA /* AppDelegate.m in Sources */,
+				1895E5FC22A2AC2D0014ABF2 /* Shcedule.m in Sources */,
+				1895E60222A2AC2D0014ABF2 /* Notice.m in Sources */,
+				1895E5FD22A2AC2D0014ABF2 /* UserId.m in Sources */,
+				1895E60022A2AC2D0014ABF2 /* Message.m in Sources */,
+				1895E5FE22A2AC2D0014ABF2 /* Todo.m in Sources */,
+				1895E60322A2AC2D0014ABF2 /* Data.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

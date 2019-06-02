@@ -1,0 +1,24 @@
+#import <Foundation/Foundation.h>
+@class Gender;
+@interface UserId:NSObject
+@property(nonatomic,copy)NSString  *account;
+@property(nonatomic,copy)NSString  *spellname;
+@property(nonatomic,copy)NSString  *image;
+@property(nonatomic,copy)NSString  *nickname;
+@property(nonatomic,copy)NSString  *qqId;
+@property(nonatomic,copy)NSString  *schoolId;
+@property(nonatomic,retain)NSNumber  *deleted;
+@property(nonatomic,copy)NSString  *roleList;
+@property(nonatomic,copy)NSString  *certificate;
+@property(nonatomic,retain)NSNumber  *type;
+@property(nonatomic,retain)NSNumber  *Id;
+@property(nonatomic,retain)Gender  *gender;
+@property(nonatomic,copy)NSString  *email;
+@property(nonatomic,copy)NSString  *uid;
+@property(nonatomic,copy)NSString  *phone;
+@property(nonatomic,retain)NSNumber  *valid;
+@property(nonatomic,copy)NSString  *unAcount;
+@property(nonatomic,copy)NSString  *decryptPassword;
+@property(nonatomic,copy)NSString  *expassword;
+@property(nonatomic,copy)NSString  *regTime;
+@end
